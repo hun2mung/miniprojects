@@ -8,6 +8,8 @@
 
 ![네이버뉴스앱](https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/studyPyQt/naver_news.png)
 
+<img scr = "https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/studyPyQt/naver_news.png" width = "800" />
+
 ## DB연동 GUI 개발 학습
 
 ## 미니프로젝트 실습
