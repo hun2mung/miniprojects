@@ -28,5 +28,3 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = qtApp()
     sys.exit(app.exec_())
-
-
