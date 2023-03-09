@@ -1,9 +1,12 @@
-def solution(numbers):
-    answer = 1
-    ans = list
-    for i in numbers:
-        print(str(abs(i)))
-        ans.append(i)
+# def solution(polynomial):
+#     answer = ''
+    
+#     a = polynomial.split()
+#     for  i in   
+#     return answer
+# if __name__ == '__main__':
+#     solution("3x + 7 + x")
 
-if __name__ == '__main__':
-    solution([1, 2, -3, 4, -5])
+a ="11234456"
+
+print(a[2])
