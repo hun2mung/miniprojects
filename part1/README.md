@@ -22,7 +22,7 @@
   - Naver OpenAPI
   - urllib.request 이미지다운로드 사용 *
 
-<img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/images/naver_movie.png.png" width="780" />
+<img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/studyPyQt/naver_movie.png.png" width="780" />
 
 ## DB연동 GUI 개발 학습
 
