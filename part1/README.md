@@ -30,9 +30,12 @@
   - MySQL 8.0
   - pymysql 모듈 사용
   - PyQt5 / Qt Designer
+- 저장
 
-![주소록앱1]("https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/studyPyQt/addressbook1.png")
-![주소록앱1]("https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/studyPyQt/addressbook2.png" width="780")
+![주소록앱1](https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/studyPyQt/addressbook1.png)
+- 삭제
+
+![주소록앱1](https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/studyPyQt/addressbook2.png)
 
 ## 미니프로젝트 실습
 
