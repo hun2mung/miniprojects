@@ -24,7 +24,28 @@ class qtApp(QMainWindow):
         self.btnDel.clicked.connect(self.btnDelClicked)
 
     def btnDelClicked(self):
-        pass
+        if self.curIdx == 0:
+            QMessageBox.warning(self, '경고', '삭제할 데이터를 선택하세요.')
+            return  # 함수를 빠져나감
+        else:
+            reply = QMessageBox.question(self, '확인', '정말로 삭제하시겠습니까?', QMessageBox.Yes | QMessageBox.No,
+                                         QMessageBox.Yes)
+            if reply == QMessageBox.No:
+                return  # 함수 빠져나옴
+            
+            self.conn = pymysql.connect(host='localhost', user='root', password = '12345',
+                                        db = 'miniproject', charset = 'utf8')
+            query = 'DELETE FROM addressbook WHERE idx = %s'
+            cur = self.conn.cursor()
+            cur.execute(query, (self.curIdx))
+
+            self.conn.commit()
+            self.conn.close()
+
+            QMessageBox.about(self, '성공', '데이터를 삭제했습니다.')
+
+            self.initDB()
+            self.btnNewClicked()
 
     def btnNewClicked(self):    # 신규버튼 누르면
         # 라인에디트 내용 삭제 후 이름에 포커스
