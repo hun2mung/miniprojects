@@ -1,6 +1,5 @@
 # 암호해체 앱
 import itertools
-import time
 import zipfile
 
 passwd_string = '0123456789'

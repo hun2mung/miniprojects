@@ -17,8 +17,8 @@ class qtApp(QWidget):
         self.btnStart.clicked.connect(self.btnStartClicked)
 
     def btnStartClicked(self):
-        self.pgbTask.setRange(0, 101)
-        for i in range(0, 101): # 0 ~ 100
+        self.pgbTask.setRange(0, 999999)
+        for i in range(0, 10000000): # 0 ~ 100
             print(f'노스레드 출력 > {i}')
             self.pgbTask.setValue(i)
             self.txbLog.append(f'노스레드 출력 > {i}')
