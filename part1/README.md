@@ -71,7 +71,9 @@
 
 
 ## 미니프로젝트 실습
+- 키오스크 앱 만들기
 
+![팀리포지토리](https://github.com/annual-salary-investigation/sandwich)
 
 
 
