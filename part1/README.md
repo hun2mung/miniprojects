@@ -71,7 +71,8 @@
 - 게임만들기 - DinoRun
   - PyGame
 
-<img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/image/pygame1.png" width="780" />
+<img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/image/pygame1.png" width="750" />
+<img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/image/pygame1.png" width="750" />
 
 ## 미니프로젝트 실습
 - 키오스크 앱 만들기
