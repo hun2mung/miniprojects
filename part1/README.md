@@ -66,9 +66,12 @@
 
 ![QR코드앱](https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/studyThread/check_thread.png)
 
-
 - 이메일 전송, 대량 메일 전송
 
+- 게임만들기 - DinoRun
+  - PyGame
+
+<img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/image/pygame1.png" width="780" />
 
 ## 미니프로젝트 실습
 - 키오스크 앱 만들기
