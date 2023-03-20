@@ -72,7 +72,12 @@
   - PyGame
 
 <img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/image/pygame1.png" width="750" />
-<img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/image/pygame1.png" width="750" />
+
+<img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/image/pygame2.png" width="750" />
+
+<img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/image/pygame3.png" width="750" />
+
+게임화면
 
 ## 미니프로젝트 실습
 - 키오스크 앱 만들기
