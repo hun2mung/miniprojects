@@ -79,6 +79,23 @@
 
 게임화면
 
+- 전국대학교 위치맵
+  - pandas
+  - folium(지도)
+  - PyQt
+    - QWebEngineView 추가
+
+<img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/image/folium_university1.png" width="750" />
+
+<img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/image/folium_university2.png" width="750" />
+
+- 계산기앱
+  - PyQt5
+  - 16개 signal을 1개의 slot함수로 처리
+
+<img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/image/calculator.png" width="200" />
+
+
 ## 미니프로젝트 실습
 - 키오스크 앱 만들기
 
