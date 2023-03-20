@@ -93,7 +93,7 @@
   - PyQt5
   - 16개 signal을 1개의 slot함수로 처리
 
-<img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/image/calculator.png" width="200" />
+<img src="https://raw.githubusercontent.com/hun2mung/miniprojects/main/part1/image/calculator.png" width="300" />
 
 
 ## 미니프로젝트 실습
