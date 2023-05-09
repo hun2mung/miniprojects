@@ -12,7 +12,7 @@
   - LiveCharts
   - OxyChart
 
-
-
-
+- SmartHome 시스템 문제점
+  - 메모리 남아있는 문제
+  - 시간이 소요되면 UI 스레드 느려짐
 

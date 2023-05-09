@@ -8,7 +8,9 @@
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     mc:Ignorable="d"
-    Title="SMARTHOME MONITORING SYSTEM" Height="800" Width="800" Loaded="MetroWindow_Loaded">
+    Title="SMARTHOME MONITORING SYSTEM" Height="800" Width="800" 
+    MinHeight="450" MinWidth="670"
+    Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing">
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <iconPacks:PackIconSimpleIcons Kind="HomeAssistant" Width="24"
@@ -27,13 +29,13 @@
             <MenuItem/>
             <ToolBarTray>
                 <ToolBar Style="{StaticResource MahApps.Styles.ToolBar}">
-                    <Button x:Name="BtnStartSubscribe" ToolTip="구독 시작">
+                    <Button x:Name="BtnStartSubscribe" ToolTip="구독 시작" Click="MnuStartSubscribe_Click">
                         <iconPacks:PackIconJamIcons Kind="PlayCircleF"/>
                     </Button>
-                    <Button x:Name="BtnStopSubscribe" ToolTip="구독 중지">
+                    <!--<Button x:Name="BtnStopSubscribe" ToolTip="구독 중지">
                         <iconPacks:PackIconBootstrapIcons Kind="PauseCircleFill"/>
-                    </Button>
-                    <Button x:Name="BtnExitSubscribe" ToolTip="프로그램 종료">
+                    </Button>-->
+                    <Button x:Name="BtnExitSubscribe" ToolTip="프로그램 종료" Click="BtnExitProgram_Click">
                         <iconPacks:PackIconBoxIcons Kind="SolidExit" />
                     </Button>
                 </ToolBar>

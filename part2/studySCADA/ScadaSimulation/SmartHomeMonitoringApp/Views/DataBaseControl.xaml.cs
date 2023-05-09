@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,6 +28,7 @@ namespace SmartHomeMonitoringApp.Views
     public partial class DataBaseControl : UserControl
     {
         public bool IsConnected { get; set; }
+        Thread MqttThread { get; set; } // 없으면 UI 컨트롤이 어려워짐
 
         public DataBaseControl()
         {
@@ -49,10 +51,8 @@ namespace SmartHomeMonitoringApp.Views
         {
             if (IsConnected == false)
             {
-                BtnConnDb.IsChecked = true;
-                IsConnected = true;
 
-                // Mqtt 브로커에 접속
+                // Mqtt 브로커 생성
                 Commons.MQTT_CLIENT = new uPLibrary.Networking.M2Mqtt.MqttClient(Commons.BROKERHOST);
 
                 try
@@ -68,25 +68,43 @@ namespace SmartHomeMonitoringApp.Views
                         UpdateLog(">>> MQTT Broker Connected");
 
                         BtnConnDb.IsChecked = true;
+                        BtnConnDb.Content = "MQTT 접속중";
                         IsConnected = true; // 예외발생하면 true
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
-
+                    UpdateLog($"!!! MQTT ERROR 발생 !!! : {ex.Message}");
                 }
             }
             else
             {
-                BtnConnDb.IsChecked = false;
-                IsConnected = false;
+                try
+                {
+                    if (Commons.MQTT_CLIENT.IsConnected)
+                    {
+                        Commons.MQTT_CLIENT.MqttMsgPublishReceived -= MQTT_CLIENT_MqttMsgPublishReceived;
+                        Commons.MQTT_CLIENT.Disconnect();
+                        UpdateLog(">>> MQTT Broker Disconnected!");
+
+                        BtnConnDb.IsChecked = false;
+                        BtnConnDb.Content = "MQTT 연결종료";
+                        IsConnected = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    UpdateLog($"!!! MQTT ERROR 발생 !!! : {ex.Message}");
+
+                }
             }
         }
 
         private void UpdateLog(string msg)
         {
             // 예외처리 필요
-            this.Invoke(() => {
+            this.Invoke(() =>
+            {
                 TxtLog.Text += $"{msg}\n";
                 TxtLog.ScrollToEnd();
 
@@ -115,19 +133,30 @@ namespace SmartHomeMonitoringApp.Views
             }
             try
             {
-                using(MySqlConnection conn = new MySqlConnection(Commons.MYSQL_CONNSTRING))
+                using (MySqlConnection conn = new MySqlConnection(Commons.MYSQL_CONNSTRING))
                 {
-                    if(conn.State == System.Data.ConnectionState.Closed) conn.Open();
-                    string insQuery = "INSERT INTO smarthomesensor ";
+                    if (conn.State == System.Data.ConnectionState.Closed) conn.Open();
+                    string insQuery = @"INSERT INTO smarthomesensor
+                                                    (Home_id,
+                                                    Room_Name,
+                                                    Sensing_DateTime,
+                                                    Temp,
+                                                    Humid)
+                                             VALUES  
+                                                    (@Home_id,
+                                                    @Room_Name,
+                                                    @Sensing_DateTime,
+                                                    @Temp,
+                                                    @Humid)";
 
                     MySqlCommand cmd = new MySqlCommand(insQuery, conn);
                     cmd.Parameters.AddWithValue("@Home_Id", currValue["Home_Id"]);
-                    cmd.Parameters.AddWithValue("@Home_Id", currValue["Room_Name"]);
-                    cmd.Parameters.AddWithValue("@Home_Id", currValue["Sensing_DateTime"]);
-                    cmd.Parameters.AddWithValue("@Home_Id", currValue["Temp"]);
-                    cmd.Parameters.AddWithValue("@Home_Id", currValue["Humid"]);
+                    cmd.Parameters.AddWithValue("@Room_Name", currValue["Room_Name"]);
+                    cmd.Parameters.AddWithValue("@Sensing_DateTime", currValue["Sensing_DateTime"]);
+                    cmd.Parameters.AddWithValue("@Temp", currValue["Temp"]);
+                    cmd.Parameters.AddWithValue("@Humid", currValue["Humid"]);
 
-                    if(cmd.ExecuteNonQuery() == 1)
+                    if (cmd.ExecuteNonQuery() == 1)
                     {
                         UpdateLog(">>> DB INSERT SUCCEED!");
                     }
@@ -137,9 +166,9 @@ namespace SmartHomeMonitoringApp.Views
                     }
                 }
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
-                UpdateLog($" ERROR 발생! : {ex.Message}");
+                UpdateLog($"!!! DB ERROR 발생 !!! : {ex.Message}");
             }
         }
     }
