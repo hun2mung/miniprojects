@@ -20,5 +20,5 @@
 
 온습도 더미데이터 시뮬레이터, 스마트홈 모니터링 앱
 
-<img src = "https://raw.githubusercontent.com/hun2mung/miniprojects/main/part2/images/SmartHomeMonitoring.gif" width="800">
+<img src = "https://raw.githubusercontent.com/hun2mung/miniprojects/main/part2/images/SmartHomeMonitoring.gif">
 
