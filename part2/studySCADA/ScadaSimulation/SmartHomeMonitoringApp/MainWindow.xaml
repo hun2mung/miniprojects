@@ -19,11 +19,12 @@
     </mah:MetroWindow.IconTemplate>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>  <!--내부 컨트롤 따라 높이 지정-->
+            <RowDefinition Height="Auto"/>
+            <!--내부 컨트롤 따라 높이 지정-->
             <RowDefinition Height="1*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
+
         <!-- 메뉴바/툴바 영역 -->
         <StackPanel Grid.Row="0">
             <MenuItem/>
@@ -41,7 +42,7 @@
                 </ToolBar>
             </ToolBarTray>
         </StackPanel>
-        
+
         <StackPanel Grid.Row="0">
             <Menu IsMainMenu="True" Style="{StaticResource MahApps.Styles.Menu}">
                 <MenuItem Header="파일">
@@ -91,7 +92,19 @@
                         <iconPacks:PackIconRemixIcon Kind="Brush2Line"/>
                     </MenuItem.Icon>
 
-                    <MenuItem Header="테마"/>
+                    <MenuItem Header="테마">
+                        <MenuItem x:Name="MnuLightTheme" Header="Light" IsChecked="True" IsCheckable="True" Click="MnuThemeAccent_Click">
+                        </MenuItem>
+                        <MenuItem x:Name="MnuDarkTheme" Header="Dark" IsChecked="True" IsCheckable="True" Click="MnuThemeAccent_Click">
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="액센트">
+                        <MenuItem x:Name="MnuAccentAmber" Header="Amber" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Click"/>
+                        <MenuItem x:Name="MnuAccentBlue" Header="Blue" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Click"/>
+                        <MenuItem x:Name="MnuAccentBrown" Header="Brown" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Click"/>
+                        <MenuItem x:Name="MnuAccentCobalt" Header="Cobalt" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Click"/>
+                    </MenuItem>
+
                 </MenuItem>
                 <MenuItem Header="도움말">
                     <MenuItem.Icon>
