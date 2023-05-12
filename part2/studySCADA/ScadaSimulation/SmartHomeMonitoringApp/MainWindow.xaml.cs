@@ -28,7 +28,7 @@ namespace SmartHomeMonitoringApp
     public partial class MainWindow : MetroWindow
     {
         string DefaultTheme { get; set; } = "Light";    // 기본 테마
-        string DefaultAccent { get; set; } = "Cobalt";   // 기본 액센트
+        string DefaultAccent { get; set; } = "Blue";   // 기본 액센트
 
         public MainWindow()
         {
@@ -181,8 +181,6 @@ namespace SmartHomeMonitoringApp
                     break;
             }
 
-
-            ThemeManager.Current.ChangeTheme(this, "Dark.Amber");
         }
     }
 }
