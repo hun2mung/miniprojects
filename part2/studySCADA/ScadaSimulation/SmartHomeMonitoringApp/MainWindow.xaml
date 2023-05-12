@@ -90,6 +90,8 @@
                     <MenuItem.Icon>
                         <iconPacks:PackIconRemixIcon Kind="Brush2Line"/>
                     </MenuItem.Icon>
+
+                    <MenuItem Header="테마"/>
                 </MenuItem>
                 <MenuItem Header="도움말">
                     <MenuItem.Icon>
