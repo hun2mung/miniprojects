@@ -30,6 +30,10 @@ namespace SmartHomeMonitoringApp.Views
         public bool IsConnected { get; set; }
         Thread MqttThread { get; set; } // 없으면 UI 컨트롤이 어려워짐
 
+        // MQTT Subscribtion text  과도 문제 속도 저하를 잡기위한 변수
+        // 23.05.11 09:29 추가!
+        int MaxCount { get; set; } = 10;
+
         public DataBaseControl()
         {
             InitializeComponent();
@@ -44,10 +48,23 @@ namespace SmartHomeMonitoringApp.Views
 
             IsConnected = false;    // 아직 접속이 안됨.
             BtnConnDb.IsChecked = false;
+
+            //실시간 모니터링에서 넘어왔을 때
+            if(Commons.MQTT_CLIENT != null && Commons.MQTT_CLIENT.IsConnected)
+            {
+                IsConnected = true;
+                BtnConnDb.IsChecked = true;
+                Commons.MQTT_CLIENT.MqttMsgPublishReceived += MQTT_CLIENT_MqttMsgPublishReceived;
+            }
         }
 
         // 토글버튼 클릭(1:접속/2:접속끊기) 이벤트 핸들러
         private void BtnConnDb_Click(object sender, RoutedEventArgs e)
+        {
+            ConnectDB();
+        }
+
+        private void ConnectDB()
         {
             if (IsConnected == false)
             {
@@ -105,9 +122,17 @@ namespace SmartHomeMonitoringApp.Views
             // 예외처리 필요
             this.Invoke(() =>
             {
+                if(MaxCount <= 0)
+                {
+                    TxtLog.Text = string.Empty;
+                    TxtLog.Text += ">>> 문서건수가 많아져 초기화!\n";
+                    TxtLog.ScrollToEnd();
+                    MaxCount = 10;  // 테스트 10, 운영 50
+                }
+
                 TxtLog.Text += $"{msg}\n";
                 TxtLog.ScrollToEnd();
-
+                MaxCount--;
             });
         }
 

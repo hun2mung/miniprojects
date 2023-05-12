@@ -1,4 +1,8 @@
-﻿using uPLibrary.Networking.M2Mqtt;
+﻿using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+using System.Threading.Tasks;
+using System.Windows;
+using uPLibrary.Networking.M2Mqtt;
 
 namespace SmartHomeMonitoringApp.Logics
 {
@@ -17,5 +21,13 @@ namespace SmartHomeMonitoringApp.Logics
 
         // MQTT 클라이언트 공용 객체
         public static MqttClient MQTT_CLIENT { get; set; }
+
+        // UserControl 같이 자식 클래스면서 MetroWindow를 직접 사용하지 않아 MahApps에 있는 Metro메시지 창 못쓸때
+        public static async Task<MessageDialogResult> ShowCustomMessageAsync(string title, string message,
+            MessageDialogStyle style = MessageDialogStyle.Affirmative)
+        {
+            return await ((MetroWindow)Application.Current.MainWindow).ShowMessageAsync(title, message, style, null);
+        }
+
     }
 }

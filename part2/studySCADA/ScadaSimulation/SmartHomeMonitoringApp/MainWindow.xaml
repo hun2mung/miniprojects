@@ -8,7 +8,7 @@
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     mc:Ignorable="d"
-    Title="SMARTHOME MONITORING SYSTEM" Height="800" Width="800" 
+    Title="SMARTHOME MONITORING SYSTEM" Height="800" Width="1000" 
     MinHeight="450" MinWidth="670"
     Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing">
     <mah:MetroWindow.IconTemplate>
@@ -70,17 +70,17 @@
                         <iconPacks:PackIconJamIcons Kind="Screen"/>
                     </MenuItem.Icon>
 
-                    <MenuItem x:Name="MnuDataBaseMon" Header="DB모니터링">
+                    <MenuItem x:Name="MnuDataBaseMon" Header="DB모니터링" Click="MnuDataBaseMon_Click">
                         <MenuItem.Icon>
                             <iconPacks:PackIconModern Kind="Database"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem x:Name="MnuRealTimeMon" Header="실시간모니터링">
+                    <MenuItem x:Name="MnuRealTimeMon" Header="실시간모니터링" Click="MnuRealTimeMon_Click">
                         <MenuItem.Icon>
                             <iconPacks:PackIconMaterial Kind="Gauge"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem x:Name="MnuVisualizationMon" Header="시각화">
+                    <MenuItem x:Name="MnuVisualizationMon" Header="시각화" Click="MnuVisualizationMon_Click">
                         <MenuItem.Icon>
                             <iconPacks:PackIconMaterial Kind="ChartMultiline"/>
                         </MenuItem.Icon>
@@ -96,7 +96,7 @@
                         <iconPacks:PackIconMaterial Kind="HelpBox"/>
                     </MenuItem.Icon>
 
-                    <MenuItem x:Name="MnuAbout" Header="이 프로그램">
+                    <MenuItem x:Name="MnuAbout" Header="이 프로그램" Click="MnuAbout_Click">
                         <MenuItem.Icon>
                             <iconPacks:PackIconBoxIcons Kind="SolidInfoCircle"/>
                         </MenuItem.Icon>

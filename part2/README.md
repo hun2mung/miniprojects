@@ -8,11 +8,17 @@
   - Bogus (더미데이터 생성 라이브러리)
   - Newtonsoft.json
   - M2Mqtt(통신 라이브러리)
-  - DB 데이터바인딩
+  - DB 데이터바인딩(MySQL)
   - LiveCharts
   - OxyChart
 
 - SmartHome 시스템 문제점
-  - 메모리 남아있는 문제
-  - 시간이 소요되면 UI 스레드 느려짐
+  - 메모리 남아있는 문제 => 해결
+  - 시간이 소요되면 UI 스레드 느려짐 : TextBox에 텍스트 과도로 인함 => 텍스트 줄여 해결!
+  - LiveCharts는 대용량 데이터 차트는 무리(LiveChart v.2.0)
+  - 대용량 데이터 차는 OxyPlot를 사용
+
+온습도 더미데이터 시뮬레이터, 스마트홈 모니터링 앱
+
+<img src = "https://github.com/hun2mung/pknu-wpf-2023/assets/92942678/19c24f72-66cc-4b1e-9b58-ca0c174e542e" width="600>
 
