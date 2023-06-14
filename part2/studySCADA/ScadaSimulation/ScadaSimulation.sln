@@ -22,6 +22,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{76C11102-DC3
 		TextFile1.txt = TextFile1.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RPiTest", "RPiTest", "{3F788AA0-64FC-43AD-BDC3-03DD380C8199}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPiMonitoringApp", "RPiMonitoringApp\RPiMonitoringApp.csproj", "{CC4CB5BB-2985-4F17-9A8C-77E41EDCE5AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +44,10 @@ Global
 		{18A652EA-2364-4E98-AA26-B10C113C8A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18A652EA-2364-4E98-AA26-B10C113C8A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18A652EA-2364-4E98-AA26-B10C113C8A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC4CB5BB-2985-4F17-9A8C-77E41EDCE5AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC4CB5BB-2985-4F17-9A8C-77E41EDCE5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC4CB5BB-2985-4F17-9A8C-77E41EDCE5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC4CB5BB-2985-4F17-9A8C-77E41EDCE5AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 		{0AE457AC-4544-4552-AA8C-70F9BFA71067} = {660FAA93-B344-471C-9265-0C43B96A57F0}
 		{8DB8CBAE-DFAB-4232-B307-B8746EBB1519} = {DFB65BD6-5F96-4B65-9D2D-CCBA6139048B}
 		{18A652EA-2364-4E98-AA26-B10C113C8A9A} = {82C6602F-68FD-4F56-A065-FB291D73CD75}
+		{CC4CB5BB-2985-4F17-9A8C-77E41EDCE5AF} = {3F788AA0-64FC-43AD-BDC3-03DD380C8199}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16805E7C-C085-4964-A84A-245B426FA719}
